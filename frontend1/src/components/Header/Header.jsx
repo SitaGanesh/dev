@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Sidebar from '../Body/SideBar/SideBar';
+import Sidebar from '../Body/SideBar/Sidebar';
 import CloseIcon from '@mui/icons-material/Close';
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
