@@ -1,7 +1,8 @@
 import React,{useState} from 'react';
-import Sidebar from './SideBar/SideBar';
+import Sidebar from './SideBar/Sidebar';
 import Main from './Main/Main';
 import Discussion from './Discussion/Discussion';
+import CodeEditor from './SideBar/CodeEditor/CodeEditor';
 
 const Body = () => {
     const [activeRoomId, setActiveRoomId] = useState(null);
