@@ -6,7 +6,10 @@ import axios from "axios";
 const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || "http://localhost:3001";
 const EXECUTOR_URL = import.meta.env.VITE_EXECUTOR_URL || "http://localhost:5000";
 
-const socket = io(SOCKET_URL);
+const socket = io(SOCKET_URL, {
+  transports: ['websocket'],   // disable polling
+  withCredentials: true        // if you need cookies/auth
+});
 
 const CodeEditor = ({ roomId, onClose, onPost }) => {
   const [output, setOutput] = useState("");
