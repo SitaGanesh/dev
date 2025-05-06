@@ -34,4 +34,4 @@ def run_code():
 
 if __name__ == '__main__':
     PORT = int(os.environ.get("PORT", 8000))  # Use PORT or fallback to 8000
-    app.run(port=PORT, debug=True)
+    app.run(port=PORT, debug=False)
