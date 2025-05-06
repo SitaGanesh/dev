@@ -16,9 +16,15 @@ const CodeEditor = ({ roomId, onClose, onPost }) => {
   const [showPostForm, setShowPostForm] = useState(false);
   const [codeValue, setCodeValue] = useState("");
   const editorRef = useRef(null);
+  const suppressChange = useRef(false);
 
   const handleEditorDidMount = (editor) => {
     editorRef.current = editor;
+    editor.onDidChangeModelContent(() => {
+      if (suppressChange.current) return;
+      const code = editor.getValue();
+      socket.emit("codeChange", {roomId, code});
+    });
   };
 
   useEffect(() => {
@@ -26,6 +32,15 @@ const CodeEditor = ({ roomId, onClose, onPost }) => {
 
     socket.emit("joinRoom", roomId);
 
+    socket.on("codeUpdate", (newCode) => {
+      const editor = editorRef.current;
+      if(!editor || newCode === editor.getValue()) return;
+      suppressChange.current = true;
+      editor.setValue(newCode);
+      setCodeValue(newCode);
+      suppressChange.current = false;
+    });
+    
     const handleCodeUpdate = (newCode) => {
       const editor = editorRef.current;
       if (!editor) return;
