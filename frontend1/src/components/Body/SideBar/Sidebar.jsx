@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
 
   return (
-    <aside className="hidden md:flex flex-col w-47 bg-gray-100 border-r border-gray-100 h-auto pt-20 px-4 space-y-2 shadow-sm z-20">
+    <aside className="hidden md:flex flex-col w-47 bg-gray-100 border-r border-gray-100 h-auto pt-10 px-4 space-y-2 shadow-sm z-20">
       {/* Add logo image here if needed */}
       {/* Navigation links */}
       <nav className="flex flex-col gap-2 mt-4">

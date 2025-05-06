@@ -7,9 +7,9 @@ const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     // Full-width header that sticks to the top-left
-    <header className="fixed top-0 left-0 w-full h-20 z-50 bg-white border-b border-gray-300">
+    <header className="fixed top-0 left-0 w-full h-15 z-50 bg-white border-b border-gray-300">
       {/* Inner container centered and limited width */}
-      <div className="max-w-[1192px] mx-auto h-full px-8 flex items-center justify-between whitespace-nowrap">
+      <div className="max-w-[1192px] mx-auto h-full px-2 flex items-center justify-between whitespace-nowrap">
 
         {/* LEFT: Hamburger + Logo */}
         <div className="flex items-center gap-2 flex-shrink-0 ">
