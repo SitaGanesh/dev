@@ -37,7 +37,6 @@ const CodeEditor = ({ roomId, onClose, onPost }) => {
       if(!editor || newCode === editor.getValue()) return;
       suppressChange.current = true;
       editor.setValue(newCode);
-      setCodeValue(newCode);
       suppressChange.current = false;
     });
     
