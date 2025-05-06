@@ -31,7 +31,7 @@ const Sidebar = () => {
         >
           <img src={Editor} alt="editor" width={24} height={24} />
           Code Editor
-          <img src={New} alt="editor" width={24} height={24} />
+          <img src={New} alt="editor" width={20} height={21} />
 
         </Link>
 
