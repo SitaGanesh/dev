@@ -12,7 +12,8 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: process.env.CORS_ORIGIN || "*", // Use CORS_ORIGIN or fallback to "*"
-    methods: ["GET", "POST"]
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
 
@@ -41,7 +42,8 @@ io.on("connection", (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 5000; // Use PORT or fallback to 5000
+const PORT = process.env.PORT || 3001;  // Use PORT or fallback to 5000
 server.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+app.get('/', (req, res) => res.send('OK'));
